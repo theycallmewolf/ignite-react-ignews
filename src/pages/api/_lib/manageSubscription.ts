@@ -20,8 +20,6 @@ export async function saveSubscription(
     )
   )
 
-  console.log({userRef})
-
   // get subscription data from Stripe
   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
 
@@ -31,8 +29,6 @@ export async function saveSubscription(
     status: subscription.status,
     price_id: subscription.items.data[0].price.id,
   }
-
-  console.log({subscriptionData})
 
   // sabe data subscription on faunaDB
   await fauna.query(
