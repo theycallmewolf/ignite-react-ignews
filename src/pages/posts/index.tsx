@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
     pageSize: 100,
   });
 
-  console.log(JSON.stringify(response, null, 2)); // 2 -> indentation
+  // console.log(JSON.stringify(response, null, 2)); // 2 -> indentation
 
   const posts = response.results.map(post => {
     return {
