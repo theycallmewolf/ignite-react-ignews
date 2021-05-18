@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ActiveLink } from '../ActiveLink';
 import { SignInButton } from '../SignInButton';
 import styles from './styles.module.scss';
 
@@ -12,12 +13,12 @@ export function Header () {
           </a>
         </Link>
         <nav>
-          <Link href="/">
-            <a className={styles.active}>Home</a>
-          </Link>
-          <Link href="/posts">
+          <ActiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={styles.active} href="/posts">
             <a>Posts</a>
-          </Link>
+          </ActiveLink>
         </nav>
         <SignInButton />
       </div>
