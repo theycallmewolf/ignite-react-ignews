@@ -25,7 +25,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
           <time>{post.updatedAt}</time>
           <div 
             dangerouslySetInnerHTML={{__html: post.content}}
-            className={styles.content}
+            className={`${styles.content} ${styles.preview}`}
           />
         </article>
       </main>
