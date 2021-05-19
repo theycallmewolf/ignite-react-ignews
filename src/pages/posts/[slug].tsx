@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import { RichText } from "prismic-dom";
@@ -14,7 +15,18 @@ interface PostProps {
 
 export default function Post({ post }: PostProps) {
   return (
-    <h1>Test</h1>
+    <>
+      <Head>
+        <title>{post.title} | ignews</title>
+      </Head>
+      <main>
+        <article>
+          <h1>{post.title}</h1>
+          <time>{post.updatedAt}</time>
+          <div dangerouslySetInnerHTML={{__html: post.content}} />
+        </article>
+      </main>
+    </>
   );
 }
 
